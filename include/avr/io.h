@@ -4,6 +4,17 @@
 #include <avr/sfr_defs.h>
 #include <stdint.h>
 
+// PORTA
+#define DDRA (virtualDDRA)
+extern volatile uint8_t virtualDDRA;
+
+#define PORTA (virtualPORTA)
+extern volatile uint8_t virtualPORTA;
+
+#define PINA (virtualPINA)
+extern volatile uint8_t virtualPINA;
+
+// PORTB
 #define DDRB (virtualDDRB)
 extern volatile uint8_t virtualDDRB;
 
@@ -11,6 +22,16 @@ extern volatile uint8_t virtualDDRB;
 extern volatile uint8_t virtualPORTB;
 
 #define PINB (virtualPINB)
+extern volatile uint8_t virtualPINB;
+
+// PORTD
+#define DDRD (virtualDDRD)
+extern volatile uint8_t virtualDDRB;
+
+#define PORTD (virtualPORTB)
+extern volatile uint8_t virtualPORTB;
+
+#define PIND (virtualPIND)
 extern volatile uint8_t virtualPINB;
 
 #define USIBR (virtualUSIBR)
@@ -33,6 +54,22 @@ extern volatile uint8_t virtualGIMSK;
 
 #define PCMSK (virtualPCMSK)
 extern volatile uint8_t virtualPCMSK;
+
+// EIFR
+#define EIFR (virtualEIFR)
+extern volatile uint8_t virtualEIFR;
+
+// EIMSK
+#define EIMSK (virtualEIMSK)
+extern volatile uint8_t virtualEIMSK;
+
+// EICRA
+#define EICRA (virtualEICRA)
+extern volatile uint8_t virtualEICRA;
+
+// INT0
+#define INT0 (virtualINT0)
+extern volatile uint8_t virtualINT0;
 
 // timer0
 #define GTCCR (virtualGTCCR)
@@ -141,8 +178,16 @@ extern volatile uint8_t virtualPRR;
 #define PSR1 1
 
 
+// EIFR
+#define INTF0 0
 
-
+// EICRA
+#define ISC21 0x10
+#define ISC20 0x08
+#define ISC11 0x04
+#define ISC10 0x02
+#define ISC01 0x01
+#define ISC00 0x00
 
 #define TSM  7
 

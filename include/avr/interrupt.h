@@ -18,5 +18,6 @@
 
 extern void ISR_PCINT2_vect(void);
 
-#endif
+extern void ISR_INT0_vect(void);
 
+#endif

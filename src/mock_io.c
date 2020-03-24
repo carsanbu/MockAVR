@@ -3,9 +3,15 @@
 
 #include <stdint.h>
 
+volatile uint8_t virtualDDRA;
+volatile uint8_t virtualPORTA;
+volatile uint8_t virtualPINA;
 volatile uint8_t virtualDDRB;
 volatile uint8_t virtualPORTB;
 volatile uint8_t virtualPINB;
+volatile uint8_t virtualDDRD;
+volatile uint8_t virtualPORTD;
+volatile uint8_t virtualPIND;
 volatile uint8_t virtualUSIBR;
 volatile uint8_t virtualUSICR;
 volatile uint8_t virtualUSIDR;
@@ -13,6 +19,10 @@ volatile uint8_t virtualUSISR;
 volatile uint8_t virtualGIFR;
 volatile uint8_t virtualGIMSK;
 volatile uint8_t virtualPCMSK;
+volatile uint8_t virtualEIFR;
+volatile uint8_t virtualEIMSK;
+volatile uint8_t virtualEICRA;
+volatile uint8_t virtualINT0;
 
 // timer0
 volatile uint8_t virtualGTCCR;
