@@ -41,6 +41,10 @@ volatile uint8_t virtualOCR1A;
 volatile uint8_t virtualOCR1B;
 volatile uint8_t virtualOCR1C;
 volatile uint8_t virtualTCNT1;
+volatile uint8_t virtualTIMSK1;
+volatile uint8_t virtualTIFR1;
+volatile uint8_t virtualTCCR1B;
+volatile uint16_t virtualICR1;
 
 // timer2
 volatile uint8_t virtualTCCR2A;

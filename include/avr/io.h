@@ -26,13 +26,13 @@ extern volatile uint8_t virtualPINB;
 
 // PORTD
 #define DDRD (virtualDDRD)
-extern volatile uint8_t virtualDDRB;
+extern volatile uint8_t virtualDDRD;
 
-#define PORTD (virtualPORTB)
-extern volatile uint8_t virtualPORTB;
+#define PORTD (virtualPORTD)
+extern volatile uint8_t virtualPORTD;
 
 #define PIND (virtualPIND)
-extern volatile uint8_t virtualPINB;
+extern volatile uint8_t virtualPIND;
 
 #define USIBR (virtualUSIBR)
 extern volatile uint8_t virtualUSIBR;
@@ -112,8 +112,20 @@ extern volatile uint8_t virtualOCR1B;
 #define OCR1C (virtualOCR1C)
 extern volatile uint8_t virtualOCR1C;
 
+#define TIFR1 (virtualTIFR1)
+extern volatile uint8_t virtualTIFR1;
+
 #define TCNT1 (virtualTCNT1)
 extern volatile uint8_t virtualTCNT1;
+
+#define TIMSK1 (virtualTIMSK1)
+extern volatile uint8_t virtualTIMSK1;
+
+#define TCCR1B (virtualTCCR1B)
+extern volatile uint8_t virtualTCCR1B;
+
+#define ICR1 (virtualICR1)
+extern volatile uint16_t virtualICR1;
 
 // timer2
 #define TCCR2A (virtualTCCR2A)
@@ -207,25 +219,43 @@ extern volatile uint8_t virtualPRR;
 #define CS02  2
 #define WGM02 3
 
+// TCCR1B
+#define ICNC1 7
+#define ICES1 6
+#define WGM13 4
+#define WGM12 3
+#define CS12  2
+#define CS11  1
+#define CS10  0
+
 // TCCR1
 #define CTC1 7
 
-
-
-#define CS13 3
-#define CS12 2
-#define CS11 1
-#define CS10 0
-
+#if defined(__AVR_ATmega32__)
 // TIMSK
 #define OCIE0A 4
 #define OCIE1B 5
 #define OCIE1A 6
+#define TOIE1  0
+#elif (defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__))
+// TIMSK1
+#define ICIE1  5
+#define OCIE1B 2
+#define OCIE1A 1
+#define TOIE1  0
+#endif
 
-// TIFR
+#if defined(__AVR_ATmega32__)
 #define OCF0A 4
 #define OCF1B 5
 #define OCF1A 6
+#elif (defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__))
+// TIFR
+#define ICF1  5
+#define OCF1B 2
+#define OCF1A 1
+#define TOV1  0
+#endif
 
 // PORTB
 #define PB0 0
